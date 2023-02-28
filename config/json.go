@@ -10,8 +10,8 @@ import (
 	"strings"
 )
 
-func ReadJson() *strings.Reader {
-	body, err := ioutil.ReadFile("../config/sample.json")
+func ReadJson(fileName string) *strings.Reader {
+	body, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
