@@ -19,6 +19,7 @@ func ReadJson() *strings.Reader {
 	return b
 }
 
+// TODO currently being implemented
 func WriteToJson(b bytes.Buffer) {
 	file, err := os.Create("../files/notion.json")
 	if err != nil {
@@ -26,7 +27,6 @@ func WriteToJson(b bytes.Buffer) {
 	}
 	defer file.Close()
 
-	// JSON ファイルに書き込み
 	encoder := json.NewEncoder(file)
 	fmt.Println(&b)
 	if err := encoder.Encode(&b); err != nil {
