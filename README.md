@@ -13,6 +13,7 @@ https://zenn.dev/shinshin/articles/1f30809917f048c7d86a
 
 ### Preparation
 
+0. Create a developer function from https://www.notion.so/my-integrations .
 1. Prepare a config.toml like the following.
 
     ```toml
@@ -33,6 +34,15 @@ Due to relative paths `./cmd/` due to relative paths. (I will fix it eventually.
 cd cmd
 go run main.go
 ```
+
+## Functions
+
+### pkg/api
+
+- RetrievePage : https://developers.notion.com/reference/retrieve-a-page
+- CreatePage : https://developers.notion.com/reference/post-page
+- UpdatePage : https://developers.notion.com/reference/patch-page
+- Search : https://developers.notion.com/reference/post-search
 
 ## Requirements
 
