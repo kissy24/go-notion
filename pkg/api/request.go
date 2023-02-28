@@ -7,13 +7,14 @@ import (
 )
 
 const PAGES = "https://api.notion.com/v1/pages/"
-const SEARCH = "https://api.notion.com/v1/search"
+const SEARCH = "https://api.notion.com/v1/search/"
 
 type Notion struct {
 	ApiKey     string
 	DatabaseId string
 }
 
+// TODO: property is not yet supported. It will be added in the future.
 func (n Notion) RetrievePage() *http.Request {
 	req, err := http.NewRequest("GET", PAGES+n.DatabaseId, nil)
 	if err != nil {
@@ -25,7 +26,7 @@ func (n Notion) RetrievePage() *http.Request {
 }
 
 func (n Notion) CreatePage(body *strings.Reader) *http.Request {
-	req, err := http.NewRequest("POST", PAGES+n.DatabaseId, body)
+	req, err := http.NewRequest("POST", PAGES, body)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -47,7 +48,7 @@ func (n Notion) UpdatePage(body *strings.Reader) *http.Request {
 }
 
 func (n Notion) Search(body *strings.Reader) *http.Request {
-	req, err := http.NewRequest("POST", SEARCH+n.DatabaseId, body)
+	req, err := http.NewRequest("POST", SEARCH, body)
 	if err != nil {
 		log.Fatal(err)
 	}
